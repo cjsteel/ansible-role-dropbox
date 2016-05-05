@@ -1,0 +1,14 @@
+https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb
+
+ansible apt requires
+
+        python-apt
+        aptitude
+
+- apt: name=foo cache_valid_time=86400 update_cache=yes
+
+https://github.com/jdauphant/ansible-role-dropbox.git
+
+restart nautilus
+install python-gpgme in order to verify signatures.
+

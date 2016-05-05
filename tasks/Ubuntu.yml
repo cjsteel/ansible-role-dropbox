@@ -1,6 +1,15 @@
 ---
+- name: Install python-gpgme in order to verify signatures.
+  become: true
+  apt: name=python-gpgme cache_valid_time=86400 update_cache=yes
+
 - name: Download Ubuntu dropbox package
   get_url: url={{ dropbox_url_ubuntu_deb }} dest={{dropbox_tmp_deb}}
 
 - name: Install Ubuntu dropbox package
+  become: true
   apt: deb={{dropbox_tmp_deb}}
+  
+- name: Restart Nautilus 
+  shell: 'nautilus -q && nautilus &'
+
